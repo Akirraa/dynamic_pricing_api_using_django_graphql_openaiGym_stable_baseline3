@@ -1,114 +1,147 @@
-<p align="center">
-  <a href="" rel="noopener">
- <img width=200px height=200px src="https://i.imgur.com/6wj0hh6.jpg" alt="Project logo"></a>
-</p>
+# 🛒 Dynamic Pricing API with Reinforcement Learning
 
-<h3 align="center">Project Title</h3>
-
-<div align="center">
-
-[![Status](https://img.shields.io/badge/status-active-success.svg)]()
-[![GitHub Issues](https://img.shields.io/github/issues/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kylelobo/The-Documentation-Compendium.svg)](https://github.com/kylelobo/The-Documentation-Compendium/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](/LICENSE)
-
-</div>
+[![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)](https://www.python.org/)
+[![Django](https://img.shields.io/badge/Django-4.x-green?logo=django)](https://www.djangoproject.com/)
+[![Stable Baselines3](https://img.shields.io/badge/Stable--Baselines3-RL-blueviolet)](https://stable-baselines3.readthedocs.io/)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 ---
 
-<p align="center"> Few lines describing your project.
-    <br> 
-</p>
+This project is a Django-based API for e-commerce dynamic pricing, powered by **Reinforcement Learning** (OpenAI Gym + Stable Baselines3).  
+Each product learns how to adjust its price based on stock levels, sales, and historical data — **automatically**.
 
-## 📝 Table of Contents
+---
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+## 🚀 Features
 
-## 🧐 About <a name = "about"></a>
+- Django backend with **GraphQL API** for product management
+- **Custom OpenAI Gym environment** for dynamic pricing simulation
+- **DQN Agent** for price optimization
+- Train, save, and load models per product
+- Easy CLI management command to update prices
+- Pipenv environment management
 
-Write about 1-2 paragraphs describing the purpose of your project.
+---
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## 🛠️ Built With
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+- Python 3.11
+- Django 4.x
+- Graphene-Django (GraphQL)
+- OpenAI Gym
+- Stable-Baselines3 (DQN)
+- Pipenv
 
-### Prerequisites
+---
 
-What things you need to install the software and how to install them.
+## ⚙️ Installation
 
-```
-Give examples
-```
+1. Clone the repository:
 
-### Installing
+    ```bash
+    git clone https://github.com/YOUR_USERNAME/dynamic_pricing_api.git
+    cd dynamic_pricing_api
+    ```
 
-A step by step series of examples that tell you how to get a development env running.
+2. Install dependencies:
 
-Say what the step will be
+    ```bash
+    pipenv install
+    ```
 
-```
-Give the example
-```
+3. Apply database migrations:
 
-And repeat
+    ```bash
+    python manage.py migrate
+    ```
 
-```
-until finished
-```
+4. (Optional) Create a superuser:
 
-End with an example of getting some data out of the system or using it for a little demo.
+    ```bash
+    python manage.py createsuperuser
+    ```
 
-## 🔧 Running the tests <a name = "tests"></a>
+5. Run the server:
 
-Explain how to run the automated tests for this system.
+    ```bash
+    python manage.py runserver
+    ```
 
-### Break down into end to end tests
+---
 
-Explain what these tests test and why
+## 📈 Usage
 
-```
-Give an example
-```
+- Update product prices:
 
-### And coding style tests
+    ```bash
+    python manage.py update_prices
+    ```
 
-Explain what these tests test and why
+- (Optional) Train new models with custom timesteps:
 
-```
-Give an example
-```
+    ```bash
+    python manage.py update_prices --train-new --timesteps 10000
+    ```
 
-## 🎈 Usage <a name="usage"></a>
+---
 
-Add notes about how to use the system.
+## 🧩 GraphQL Example
 
-## 🚀 Deployment <a name = "deployment"></a>
+Fetch all products:
 
-Add additional notes about how to deploy this on a live system.
+```graphql
+{
+  allProducts {
+    id
+    name
+    currentPrice
+    minPrice
+    maxPrice
+    stock
+  }
+}
 
-## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
-- [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
-- [NodeJs](https://nodejs.org/en/) - Server Environment
+GraphQL endpoint: http://localhost:8000/graphql/
 
-## ✍️ Authors <a name = "authors"></a>
+## 📂 Project Structure
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+dynamic_pricing_api/
+├── products/           # Product models and GraphQL schema
+├── rl_pricing/          # Reinforcement Learning trainer & environment
+├── manage.py
+├── Pipfile / Pipfile.lock
+├── README.md
+└── requirements.txt
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
+## 🛣️ Roadmap
+ Add PPO, A2C agents
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+ Async training
+
+ Advanced reward shaping
+
+ Docker containerization
+
+ Admin UI for model insights
+
+
+
+## 📜 License
+Distributed under the MIT License. See LICENSE for more information.
+
+
+
+🙌 Acknowledgements
+Django
+
+Stable-Baselines3
+
+OpenAI Gym
+
+Graphene-Django
+
+
+
+Made with ❤️ by Rayane Kahlaoui

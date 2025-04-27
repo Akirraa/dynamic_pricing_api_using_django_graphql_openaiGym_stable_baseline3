@@ -103,7 +103,7 @@ Fetch all products:
 
 
 GraphQL endpoint: http://localhost:8000/graphql/
-
+---
 ## 📂 Project Structure
 
 dynamic_pricing_api/
@@ -114,7 +114,7 @@ dynamic_pricing_api/
 ├── README.md
 └── requirements.txt
 
-
+---
 ## 🛣️ Roadmap
  Add PPO, A2C agents
 
@@ -127,12 +127,12 @@ dynamic_pricing_api/
  Admin UI for model insights
 
 
-
+---
 ## 📜 License
 Distributed under the MIT License. See LICENSE for more information.
 
 
-
+---
 🙌 Acknowledgements
 Django
 
@@ -142,6 +142,6 @@ OpenAI Gym
 
 Graphene-Django
 
-
+---
 
 Made with ❤️ by Rayane Kahlaoui

@@ -36,10 +36,20 @@ class Command(BaseCommand):
                     self.stdout.write(f"Loading or creating model for {product.name}...")
                     trainer.load_or_create_model()
                 
-                current_price = float(product.current_price)
-                price_change = trainer.predict_price_change()
-                new_price = current_price * (1 + price_change)
-                new_price = max(float(product.min_price), min(float(product.max_price), new_price))
+                    current_price = float(product.current_price)
+
+                    if product.pricing_strategy == 'RL':
+                        price_change = trainer.predict_price_change()
+                        new_price = current_price * (1 + price_change)
+                        strategy_used = "RL Model"
+                    else:  # STATIC pricing
+                        price_change = 0.02  # +2% increase manually
+                        new_price = current_price * (1 + price_change)
+                        strategy_used = "Static Pricing (+2%)"
+
+                    # Clamp the price between min and max
+                    new_price = max(float(product.min_price), min(float(product.max_price), new_price))
+
                 
                 if abs(new_price - current_price) > 0.01:  # Only update if change > 1 cent
                     product.current_price = new_price

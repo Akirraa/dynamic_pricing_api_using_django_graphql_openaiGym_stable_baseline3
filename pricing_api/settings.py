@@ -31,6 +31,9 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'colorfield',  
+    'admin_interface',
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -41,6 +44,10 @@ INSTALLED_APPS = [
     'graphene_django',
     'products',
     'rl_pricing',
+    'pricing_api',
+    
+    'django_celery_results',
+    'django_celery_beat',
 ]
 
 GRAPHENE = {
@@ -133,3 +140,30 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+
+
+# CELERY CONFIGURATION
+CELERY_BROKER_URL = 'redis://172.22.186.98:6379/0'  # Using Redis
+CELERY_RESULT_BACKEND = 'django-db'  # django_celery_results
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+
+from celery.schedules import crontab
+
+CELERY_BEAT_SCHEDULE = {
+    'retrain-models-daily': {
+        'task': 'rl_pricing.tasks.retrain_rl_models',
+        'schedule': crontab(hour=0, minute=0),  # every day at midnight
+    },
+    
+    'update-prices-every-5-minutes': {
+        'task': 'rl_pricing.tasks.update_product_prices',
+        'schedule': crontab(minute='*/5'),  # every 5 minutes
+    },
+}
+
+
+ADMIN_INTERFACE_DEFAULT_THEME = 'dark'

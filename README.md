@@ -105,7 +105,7 @@ Fetch all products:
 GraphQL endpoint: http://localhost:8000/graphql/
 ---
 ## 📂 Project Structure
-
+```
 dynamic_pricing_api/
 ├── products/           # Product models and GraphQL schema
 ├── rl_pricing/          # Reinforcement Learning trainer & environment
@@ -113,7 +113,7 @@ dynamic_pricing_api/
 ├── Pipfile / Pipfile.lock
 ├── README.md
 └── requirements.txt
-
+```
 ---
 ## 🛣️ Roadmap
  Add PPO, A2C agents

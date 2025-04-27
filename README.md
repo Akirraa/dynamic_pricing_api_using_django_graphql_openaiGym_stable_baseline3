@@ -144,4 +144,4 @@ See the full [LICENSE](./LICENSE) file for more information.
 
 ---
 
-Made with ❤️ by Rayane Kahlaoui
+Made with ❤️ by Rayane Kahlaoui and Asma Benhiba

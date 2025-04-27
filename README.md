@@ -100,7 +100,7 @@ Fetch all products:
     stock
   }
 }
-
+```
 
 GraphQL endpoint: http://localhost:8000/graphql/
 ---

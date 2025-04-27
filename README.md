@@ -25,13 +25,11 @@ Each product learns how to adjust its price based on stock levels, sales, and hi
 
 ## 🛠️ Built With
 
-- Python 3.11
-- Django 4.x
-- Graphene-Django (GraphQL)
-- OpenAI Gym
-- Stable-Baselines3 (DQN)
-- Pipenv
-
+- [Python 3.11](https://www.python.org/)
+- [Django 4.x](https://www.djangoproject.com/)
+- [Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/)
+- [OpenAI Gym](https://www.gymlibrary.dev/)
+- [Stable-Baselines3](https://stable-baselines3.readthedocs.io/)
 ---
 
 ## ⚙️ Installation
@@ -129,18 +127,20 @@ dynamic_pricing_api/
 
 ---
 ## 📜 License
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the [MIT License(https://opensource.org/licenses/MIT)].
+See the full [LICENSE](./LICENSE) file for more information.
 
 
 ---
 🙌 Acknowledgements
-Django
 
-Stable-Baselines3
+[Django](https://www.djangoproject.com)
 
-OpenAI Gym
+[Stable-Baselines3](https://stable-baselines3.readthedocs.io/en/master/)
 
-Graphene-Django
+[OpenAI Gym](https://www.gymlibrary.dev)
+
+[Graphene-Django](https://docs.graphene-python.org/projects/django/en/latest/)
 
 ---
 

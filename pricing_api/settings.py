@@ -41,7 +41,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     
-    'graphene_django',
+    
+    'graphene_django', 
+    
+    
     'products',
     'rl_pricing',
     'pricing_api',
@@ -167,3 +170,6 @@ CELERY_BEAT_SCHEDULE = {
 
 
 ADMIN_INTERFACE_DEFAULT_THEME = 'dark'
+
+
+

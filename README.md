@@ -8,8 +8,8 @@
 ---
 
 This project is a Django-based API for e-commerce dynamic pricing, powered by **Reinforcement Learning** (OpenAI Gym + Stable Baselines3).  
-Each product learns how to adjust its price based on stock levels, sales, and historical data — **automatically**.
-
+Each product learns how to adjust its price based on stock levels, sales, and historical data — **automatically**.<br>
+This project was proposed by Mr. [Chaouki Bayoudhi](https://github.com/ChaoukiBayoudhi), A computer science teacher at the High Institute of Management of Tunis
 ---
 
 ## 🚀 Features
